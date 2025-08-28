@@ -2,7 +2,9 @@ import { Component, signal } from '@angular/core';
 
 interface GithubUrls {
   url: string,
-  name: string
+  name: string,
+  icon: string,
+  iconClass?: boolean
 }
 
 interface Project {
@@ -23,21 +25,23 @@ export class Projects {
       name: 'Jogo de Xadrez',
       description: 'Meu primeiro projeto. Desenvolvido com JavaScript puro para explorar lógica e manipulação do DOM. Um desafio complexo que me ensinou a enfrentar problemas de frente, mesmo no início da jornada.',
       techStack: ['JavaScript (Vanilla)', 'HTML5', 'CSS3'],
-      githubUrls: [{url: 'https://github.com/Hen05/Chess', name: 'Chess'}]
+      githubUrls: [{url: 'https://github.com/Hen05/Chess', name: 'Chess', icon: 'assets/github.svg'}]
     },
     {
       name: 'Sistema de Clubes',
       description: 'Aplicação para gestão de bebidas em clubes, controlando com precisão a entrada, saída e o estoque de itens pertencentes aos membros, garantindo um serviço exclusivo e organizado.',
       techStack: ['React', 'Next.js', 'MongoDB', 'Node.js'],
       githubUrls: [
-        {url: '', name: 'Backend'},
-        {url: 'https://github.com/Hen05/restaurant-web', name: 'Frontend'}
+        {url: 'https://github.com/Hen05/club-system', name: 'Sistema de Clubes', icon: 'assets/github.svg'}
       ]
     },
     {
       name: 'IDIMESPE Editora (Privado)',
       description: 'Plataforma completa para uma editora acadêmica, gerenciando todo o fluxo de submissão, revisão e publicação de artigos científicos, com formulários dinâmicos e painéis de controle.',
       techStack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL'],
+      githubUrls: [
+        {url: 'https://juscogens.com.br/home', name: 'Juscogens', 'icon': 'assets/juscogens.svg', iconClass: true}
+      ]
     },
     {
       name: 'Microsserviço de Imagens com IA (Privado)',

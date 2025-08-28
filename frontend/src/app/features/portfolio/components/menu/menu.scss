@@ -12,7 +12,7 @@
 
 .menu_hero {
   padding: 2rem;
-  background-color: var(--bg-card);
+  background-color: var(--bg-container);
   border-bottom: 1px solid var(--border-color);
   text-align: center;
 }
@@ -59,12 +59,12 @@
 
   &:hover {
     background-color: var(--hover-bg);
-    color: var(--accent-primary-light);
+    color: var(--accent-primary);
   }
 
   &.active {
     background-color: var(--active-bg);
-    color: var(--accent-primary-light);
+    color: var(--accent-primary);
     font-weight: 600;
   }
 }

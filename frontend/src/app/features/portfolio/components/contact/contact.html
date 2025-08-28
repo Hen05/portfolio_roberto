@@ -1,0 +1,65 @@
+<section class="contact_container">
+  <h2 class="contact_title">Entre em Contato</h2>
+  <p class="contact_paragraph">Vamos conversar! Fique à vontade para me enviar uma mensagem através do formulário abaixo.</p>
+  
+  <!-- Formulário reativo ligado ao contactForm do componente .ts -->
+  <form class="contact_form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Campo Nome -->
+    <div class="form_group">
+      <input 
+        type="text" 
+        placeholder="Seu nome" 
+        formControlName="name"
+        [ngClass]="{'invalid': name?.invalid && (name?.dirty || name?.touched)}">
+      
+      @if (name?.invalid && (name?.dirty || name?.touched)) {
+        <div class="error_message">
+          @if (name?.errors?.['required']) {
+            <span>O nome é obrigatório.</span>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Campo E-mail -->
+    <div class="form_group">
+      <input 
+        type="email" 
+        placeholder="Seu e-mail" 
+        formControlName="email"
+        [ngClass]="{'invalid': email?.invalid && (email?.dirty || email?.touched)}">
+      
+      @if (email?.invalid && (email?.dirty || email?.touched)) {
+        <div class="error_message">
+          @if (email?.errors?.['required']) {
+            <span>O e-mail é obrigatório.</span>
+          }
+          @if (email?.errors?.['email']) {
+            <span>Por favor, insira um e-mail válido.</span>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Campo Mensagem -->
+    <div class="form_group">
+      <textarea 
+        placeholder="Sua mensagem" 
+        rows="6" 
+        formControlName="message"
+        [ngClass]="{'invalid': message?.invalid && (message?.dirty || message?.touched)}"></textarea>
+      
+      @if (message?.invalid && (message?.dirty || message?.touched)) {
+        <div class="error_message">
+          @if (message?.errors?.['required']) {
+            <span>A mensagem é obrigatória.</span>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Botão de Envio -->
+    <button type="submit" [disabled]="contactForm.invalid">Enviar Mensagem</button>
+  </form>
+</section>

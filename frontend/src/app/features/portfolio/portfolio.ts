@@ -4,11 +4,12 @@ import { Menu } from './components/menu/menu';
 import { Home } from './components/home/home';
 import { AboutMe } from './components/about-me/about-me';
 import { Projects } from './components/projects/projects';
+import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'portfolio-root',
   standalone: true,
-  imports: [CommonModule, Menu, Home, AboutMe, Projects],
+  imports: [CommonModule, Menu, Home, AboutMe, Projects, Contact],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
