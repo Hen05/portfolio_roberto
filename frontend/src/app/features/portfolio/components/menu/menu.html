@@ -1,1 +1,30 @@
-<p>menu works!</p>
+<div class="menu_container">
+  <!-- Cabeçalho do Menu -->
+  <div class="menu_hero">
+    <h1 class="menu_title">
+      Meu Portfólio
+    </h1>
+    <p class="menu_subtitle">Seja bem-vindo(a)!</p>
+  </div>
+
+  <!-- Opções do Menu -->
+  <nav class="menu_options">
+    <ul>
+      @for (option of options; track option) {
+        <li>
+          <button
+            (click)="handleChangeOption(option)"
+            [class]="getOptionClasses(option)"
+            >
+            {{ option }}
+          </button>
+        </li>
+      }
+    </ul>
+  </nav>
+
+   <!-- Rodapé do Menu -->
+  <div class="menu_footer">
+    <p>© 2025 Roberto Henrique - Todos os direitos reservados</p>
+  </div>
+</div>

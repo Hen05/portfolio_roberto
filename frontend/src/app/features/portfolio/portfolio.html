@@ -1,0 +1,41 @@
+<main class="portfolio_container">
+  <aside class="portfolio_menu_area">
+    <app-menu
+      [options]="menuOptions"
+      [activeOption]="selectedOption()"
+      (changeOption)="onMenuChange($event)"
+    ></app-menu>
+  </aside>
+
+  <section class="portfolio_content_area">
+    @switch (selectedOption()) {
+      @case ('Início') {
+        <div class="animate-fade-in">
+          <app-home></app-home>
+        </div>
+      }
+      @case ('Sobre Mim') {
+        <div class="animate-fade-in">
+          <app-about-me></app-about-me>
+        </div>
+      }
+      @case ('Projetos') {
+        <div class="animate-fade-in">
+          <app-projects></app-projects>
+        </div>
+      }
+      @case ('Contato') {
+        <div class="animate-fade-in">
+          <h2 class="content_title">Entre em Contato</h2>
+          <p class="content_paragraph">Vamos conversar! Envie uma mensagem:</p>
+          <form>
+              <input type="text" placeholder="Seu nome">
+              <input type="email" placeholder="Seu e-mail">
+              <textarea placeholder="Sua mensagem" rows="5"></textarea>
+              <button type="submit">Enviar</button>
+          </form>
+        </div>
+      }
+    }
+  </section>
+</main>

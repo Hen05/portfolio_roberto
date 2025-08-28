@@ -1,0 +1,110 @@
+.projects_container {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: transparent; /* Fundo transparente para se mesclar com a página */
+  color: var(--text-primary);
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+
+.projects_title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent-primary);
+  margin-bottom: 2.5rem;
+}
+
+.project_grid {
+  display: grid;
+  /* Cria um grid responsivo que ajusta o número de colunas ao espaço disponível */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project_card {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px var(--shadow-color);
+}
+
+.card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-primary-light);
+}
+
+.card_header a {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.card_header a:hover {
+  color: var(--accent-primary);
+}
+
+.card_description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+  margin-bottom: 1.5rem;
+}
+
+.card_footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto; /* Empurra o rodapé para o final do card */
+}
+
+.tech_tag {
+  background-color: rgba(66, 153, 225, 0.15);
+  color: var(--accent-primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* Pill shape */
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Estilo específico para o card de projetos da universidade */
+.university_card {
+  background: linear-gradient(145deg, rgba(45, 55, 72, 0.5), rgba(26, 32, 44, 0.5));
+  border: 2px dashed var(--border-color);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.university_card .card_title {
+  color: var(--accent-primary);
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  .projects_container {
+    padding: 2rem 1rem;
+  }
+  .projects_title {
+    font-size: 1.75rem;
+  }
+}
